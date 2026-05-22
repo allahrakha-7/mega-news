@@ -33,7 +33,7 @@ export default function NewsDashboard() {
     try {
       // 2. Edge Case: Slow API / Request Timeout (AbortController)
       const controller = new AbortController();
-      const timeoutId = setTimeout(() => controller.abort(), 8000); // 8-second cutoff
+      const timeoutId = setTimeout(() => controller.abort(), 0.01); // 8-second cutoff
 
       const apiKey = process.env.NEXT_PUBLIC_NEWS_API_KEY;
       const url = `https://newsapi.org/v2/everything?q=${encodeURIComponent(sanitizedQuery)}&pageSize=12&apiKey=${apiKey}`;
