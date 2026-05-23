@@ -15,8 +15,8 @@ Please refer explicitly to the copy-paste commands provided in the root `README.
 * **Worse Choice:** Vanilla PHP or Bash/cURL CLI scripts. Without structural framework states, writing modern UI components with robust data caching mechanisms, race-condition handling, and loading skeletons becomes messy and brittle.
 
 ### 3. One real edge case
-* **Edge Case Handled:** API Unresponsiveness & Downward Latency Spikes.
-* **Code Location:** `src/components/NewsDashboard.tsx`, Lines 29–38.
+* **Edge Case Handled:** API Unresponsiveness & Downward Latency..
+* **Code Location:** `src/components/NewsDashboard.tsx`.
 * **Explanation:** If NewsAPI encounters an internal network bottleneck and hangs, standard browser `fetch` calls can stay open indefinitely. I implemented an `AbortController` linked to an explicit 8-second `setTimeout`. If the response isn't resolved in 8 seconds, the connection aborts cleanly and exposes a descriptive user-friendly message, preventing an infinite loading state.
 
 ### 4. Honest gap
